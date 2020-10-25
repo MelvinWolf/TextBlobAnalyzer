@@ -16,6 +16,9 @@ if __name__ == '__main__':
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 with open(r'C:\Users\Melvin Wolf\PycharmProjects\pythonProject\THG.txt') as file:
     data = file.read().replace('\n', '')
-print(data)
 blob = TextBlob(data)
 print(sorted(blob.word_counts.items(), key=lambda item: item[1]))
+print((blob.sentiment))
+for s in blob.sentences:
+    if s.sentiment.polarity < -0.4 or s.sentiment.polarity > 0.5:
+        print(s, s.sentiment)
