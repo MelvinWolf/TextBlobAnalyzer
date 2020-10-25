@@ -18,4 +18,4 @@ with open(r'C:\Users\Melvin Wolf\PycharmProjects\pythonProject\THG.txt') as file
     data = file.read().replace('\n', '')
 print(data)
 blob = TextBlob(data)
-print(blob.word_counts)
+print(sorted(blob.word_counts.items(), key=lambda item: item[1]))
